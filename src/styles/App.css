@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+:root {
+    --navyBlue: #163175;
+    --deepBlue: #394A75;
+    --oceanBlue: #5A74B7;
+    --lightBlue: #789BF5;
+    --gray: #EAEAEA;
+    --yellow: #C9A03A;
+}
+
+body, header, footer, main {
+    margin: 0;
+}
+
+h1, h2, h3, span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+input, button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
