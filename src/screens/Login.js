@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import styles from '../styles/loginStyles.module.css';
 import { useHistory } from 'react-router-dom';
 import {Helmet} from 'react-helmet';
-import ErrorCard from '../components/errorCard';
 
 const INITIAL_STATE = {
     username: '',
@@ -12,8 +11,6 @@ const INITIAL_STATE = {
 const LoginPage = () => {
 
     let history = useHistory();
-
-    let error = false;
 
     const [values, setValues] = useState(INITIAL_STATE);
 
@@ -27,7 +24,6 @@ const LoginPage = () => {
     const login = e => {
         e.preventDefault();
         if ( values.username === 'Tractian' && values.password === 'Tractian' ) {
-            error = false;
             history.push('/');
         } else {
             window.alert('Invalid Credentials!')
