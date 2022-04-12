@@ -1,0 +1,116 @@
+.infoPage__container {
+    width: 100%;
+    min-height: 95vh;
+    background: var(--gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.title__container {
+    margin: 3rem 0;
+    width: 90%;
+    text-align: center;
+    border-bottom: 3px solid #c2c2c2;
+}
+.title__container > h1 {
+    font-size: 50px;
+    color: var(--midBlue);
+    margin: 0 auto;
+}
+.infoCard__container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.infoCard {
+    width: 100%;
+    height: 50px;
+    background: var(--lightBlue);
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+.infoCard:active, .infoCard:hover {
+    background: var(--midBlue);
+}
+.backBtn__container {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 3px solid #c2c2c2;
+    margin: 3rem 0;
+    padding: 10px 0 0 0;
+}
+.backBtn {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.backBtn > svg {
+    width: 40px;
+    height: 40px;
+    fill: var(--midBlue);
+}
+.backBtn > span {
+    font-size: 20px;
+    color: var(--midBlue);
+}
+.backBtn:hover svg, .backBtn:active svg {
+    fill: var(--lightBlue);
+}
+.backBtn:hover span, .backBtn:active span {
+    color: var(--lightBlue);
+}
+
+@media (max-width: 700px) {
+    .title__container > h1 {
+        font-size: 30px;
+    }
+    .backBtn > svg {
+        width: 30px;
+        height: 30px;
+    }
+    .backBtn > span {
+        font-size: 18px;
+    }
+    .infoCard__container {
+        width: 90%;
+    }
+    .infoCard {
+        margin: 7px 0;;
+    }
+}
+
+@media (max-width: 400px) {
+    .infoCard__container {
+        width: 95%;
+    }
+    .infoCard {
+        height: 40px;
+        margin: 5px 0;
+        font-size: 12px;
+    }
+    .title__container, .backBtn__container {
+        margin: 1.5rem 0;
+    }
+    .backBtn > svg {
+        width: 20px;
+        height: 20px;
+    }
+    .backBtn > span {
+        font-size: 13px;
+    }
+}

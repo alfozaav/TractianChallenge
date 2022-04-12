@@ -1,13 +1,12 @@
-import styles from '../styles/styles.module.css';
+import styles from '../styles/homeStyles.module.css';
 import { useHistory } from 'react-router-dom';
 
 const MenuCard = (props) => {
 
     const history = useHistory();
-    let url = props.urlTo;
 
     const handleClick = () => {
-        history.push(`/${url}`)
+        history.push(props.urlTo)
     }
 
     return (

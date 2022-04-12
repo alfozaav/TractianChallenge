@@ -1,0 +1,108 @@
+/* ------------ MenuCard ----------- */
+.menuCard {
+    width: 250px;
+    height: 250px;
+    background: var(--midBlue);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.menuCard > img {
+    height: 100px;
+    margin: 0;
+}
+.menuCard > h3 {
+    margin: 0;
+    color: white;
+    font-size: 20px
+}
+.menuCard:hover, .menuCard:active {
+    background: var(--lightBlue);
+}
+/* ------------ Home Container ----------- */
+.homePage__container {
+    background: var(--gray);
+    width: 100%;
+    min-height: 95vh;
+    padding: 40px 60px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 520px 610px;
+    align-items: center;
+    justify-content: center;
+    grid-column-gap: 60px;
+}
+.menuCard__container {
+    margin: 0 auto;
+    width: 520px;
+    grid-gap: 10px;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    align-content: center;
+    justify-content: center;
+}
+.menuCard__container > div {
+    margin: 0 auto;
+}
+.charts__container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+/* --------------------------Max Width: 1200px------------------*/
+@media (max-width: 1200px) {
+    .homePage__container {
+        height: auto;
+        grid-template-columns: 100%;
+        grid-row-gap: 30px;
+        align-items: center;
+        justify-content: center;
+        grid-template-areas: "b" "a";
+    }
+    .charts__container {
+        grid-area: b;
+    }
+    .menuCard__container {
+        grid-area: a;
+        width: 80%;
+    }
+}
+/* --------------------------Max Width: 700px------------------*/
+@media (max-width: 700px) {
+    .homePage__container {
+        width: 100%;
+        padding: 40px 10px
+    }
+    .charts__container {
+        width: 100%;
+    }
+    .menuCard__container {
+        width: 100%;
+    }
+    .menuCard {
+        width: 100%;
+        height: 23vh;
+    }
+}
+/* --------------------------Max Width: 400px------------------*/
+@media (max-width: 400px) {
+    .homePage__container {
+        padding: 20px 10px;
+    }
+    .menuCard {
+        height: 18vh;
+    }
+    .menuCard > img {
+        height: 60px
+    }
+    .menuCard > h3 {
+        font-size: 16px;
+    }
+}

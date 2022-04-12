@@ -34,6 +34,7 @@
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
+    box-sizing: border-box;
     border-radius: 20px;
 }
 
@@ -77,4 +78,37 @@
     text-align: center;
     color: white;
     margin-bottom: 1rem;
+}
+
+@media (max-width: 1000px) {
+    .login__container > img {
+        width: 300px;
+        margin-bottom: 8rem;
+    }
+    .form__container {
+        width: 600px;
+    }
+    .form__container > form {
+        width: 95%
+    }
+    .form__container > p{
+        text-align: center;
+    }
+}
+
+@media (max-width: 700px) {
+    .login__container > img {
+        margin-bottom: 5rem;
+    }
+    .form__container {
+        width: 95%;
+    }
+    .form__container > p{
+        text-align: center;
+        font-size: 25px;
+    }
+    .login__btn {
+        width: 95%;
+        margin-top: 2rem;
+    }
 }
