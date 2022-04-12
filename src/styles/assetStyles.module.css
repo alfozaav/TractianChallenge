@@ -1,0 +1,80 @@
+.assetPage__container {
+    width: 100%;
+    min-height: 95vh;
+    background: var(--gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0;
+}
+.assetPage__container > h1 {
+    color: var(--midBlue);
+    font-size: 40px;
+}
+.assetIcon {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--midBlue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.assetIcon > img {
+    width: 100%;
+    margin: 0 auto;
+}
+.assetInfo__container {
+    background: white;
+    width: 600px;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    margin: 5px 0;
+}
+.assetInfo__container > span {
+    color: var(--oceanBlue);
+    font-size: 20px;
+}
+.assetInfo__container > p,  .assetInfo__container > p > span{
+    color: var(--oceanBlue);
+    font-size: 16px;
+    margin: 8px 0;
+}
+.sensor {
+    margin: 10px 0 0 0;
+    width: 100px;
+    background: var(--lightBlue);
+    height: 25px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sensor > span {
+    color: white;
+    font-size: 16px;
+}
+@media(max-width: 700px) {
+    .assetPage__container > h1 {
+        font-size: 30px;
+    }
+    .assetInfo__container {
+        width: 95%;
+    }
+    .assetInfo__container > span {
+        color: var(--oceanBlue);
+        font-size: 15px;
+    }
+    .assetInfo__container > p,  .assetInfo__container > p > span{
+        color: var(--oceanBlue);
+        font-size: 13px;
+        margin: 5px 0;
+    }
+}

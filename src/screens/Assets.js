@@ -39,7 +39,7 @@ const AssetsPage = () => {
                         {loading && <Spinner /> }
                         {assets.map(asset => {
                             return (
-                                <InfoCard key={asset.id} id={asset.id} name={asset.name} txt={asset.status} />
+                                <InfoCard key={asset.id} id={asset.id} name={asset.name} txt={asset.status} category='assets' idTo={asset.id} />
                             )
                         })}
                     </div>

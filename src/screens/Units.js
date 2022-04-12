@@ -39,7 +39,7 @@ const UnitsPage = () => {
                         {loading && <Spinner /> }
                         {units.map(unit => {
                             return (
-                                <InfoCard key={unit.id} name={unit.name} />
+                                <InfoCard key={unit.id} name={unit.name} category='units' idTo={unit.id} />
                             )
                         })}
                     </div>

@@ -39,7 +39,7 @@ const UsersPage = () => {
                         {loading && <Spinner /> }
                         {users.map(user => {
                             return (
-                                <InfoCard key={user.id} name={user.name} />
+                                <InfoCard key={user.id} name={user.name} category='users' idTo={user.id} />
                             )
                         })}
                     </div>

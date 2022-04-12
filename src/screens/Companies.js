@@ -39,7 +39,7 @@ const CompaniesPage = () => {
                         {loading && <Spinner /> }
                         {companies.map(company => {
                             return (
-                                <InfoCard key={company.id} name={company.name} />
+                                <InfoCard key={company.id} name={company.name} category='companies' idTo={company.id} />
                             )
                         })}
                     </div>
