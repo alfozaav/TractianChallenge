@@ -62,6 +62,9 @@
     border-radius: 10px;
     cursor: pointer;
     margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .editPage_btn:hover, .editPage_btn:active {
     color: var(--yellow);
