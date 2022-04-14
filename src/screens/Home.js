@@ -1,16 +1,19 @@
+//  Imports
 import React, {useEffect, useState} from 'react';
-import axios from 'axios';
 import {Helmet} from 'react-helmet';
-import Layout from '../components/Layout';
-import MenuCard from '../components/MenuCard';
-import styles from '../styles/homeStyles.module.css';
+import axios from 'axios';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
+//  Components
+import Layout from '../components/Layout';
+import MenuCard from '../components/MenuCard';
+//  Styles
+import styles from '../styles/homeStyles.module.css';
 
 const HomePage = () => {
-
+    //  State
     const [ assets, setAssets ] = useState([]);
-
+    //  Gets All Assets
     useEffect(() => {
         const getAssets = async () => {
             try {
@@ -22,21 +25,23 @@ const HomePage = () => {
         }
         getAssets();
     }, []);
-
+    //  Spline Chart Params
     let chartIndx = [];
     let chartOptions = [];
+    //  Pie Chart Params
     let assetsStatus = [];
+    //  Counters
     let a = 0;
     let b = 0;
     let c = 0;
-
+    //  Assigns Correct Data From Assets
     assets.map(asset => {
         chartOptions.push(asset.healthscore);
         chartIndx.push(asset.id);
         assetsStatus.push(asset.status);
         return (chartOptions, chartIndx, assetsStatus);
     });
-
+    //  Increments Counter To Correct Information
     assetsStatus.map ( asset => {
         if ( asset === 'inAlert' ) {
             a++;
@@ -47,7 +52,7 @@ const HomePage = () => {
         }
         return (a, b, c);
     } )
-
+    //  Spline Chart Initialization
     const splineChart = {
         chart: {type: 'spline', borderRadius: 20},
         title: {text: 'Assets Health Score'},
@@ -56,13 +61,11 @@ const HomePage = () => {
             {data: chartOptions}
         ]
     }
-
+    //  Charts Colors
     Highcharts.setOptions({
         colors: ['#394A75', '#5A74B7', '#2047A8']
     })
-
-
-
+    //  Pie Chart Initialization
     const pieChart = {
         chart: {type: 'pie', plotShadow: false, plotBorderWidth: null, plotBackgroundColor: null, borderRadius: 20},
         title: {text: 'Assets Status'},

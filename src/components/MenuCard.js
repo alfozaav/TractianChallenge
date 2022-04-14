@@ -1,12 +1,14 @@
+//  Import
+import { useNavigate } from 'react-router-dom';
+//  Styles
 import styles from '../styles/homeStyles.module.css';
-import { useHistory } from 'react-router-dom';
 
 const MenuCard = (props) => {
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const handleClick = () => {
-        history.push(props.urlTo)
+        navigate(props.urlTo)
     }
 
     return (

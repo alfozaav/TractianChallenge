@@ -1,5 +1,7 @@
+/*-----------------------APP GENERAL STYLES--------------------*/
+/*-----------------------FONTS-----------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
-
+/*-----------------------COLORS-----------------------------*/
 :root {
     --navyBlue: #163175;
     --deepBlue: #394A75;
@@ -9,21 +11,20 @@
     --gray: #EAEAEA;
     --yellow: #C9A03A;
 }
-
+/*-----------------------CONTAINERS-----------------------------*/
 body, header, footer, main {
     margin: 0;
 }
-
-h1, h2, h3, span {
+/*-----------------------TEXTS-----------------------------*/
+h1, h2, h3, span, a {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700; 
 }
-
 p {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
-
+/*-----------------------FORM ELEMENTS-----------------------------*/
 input, button {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;

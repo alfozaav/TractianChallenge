@@ -1,4 +1,4 @@
-import React from 'react';
+//  Styles
 import styles from '../styles/spinner.module.css';
 
 const Spinner = () => (

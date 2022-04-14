@@ -1,4 +1,5 @@
-/* ------------ MenuCard ----------- */
+/*-----------------------HOME PAGE & COMPONENTS STYLES--------------------*/
+/* ------------------------ MENU CARD -------------------------*/
 .menuCard {
     width: 250px;
     height: 250px;
@@ -22,7 +23,7 @@
 .menuCard:hover, .menuCard:active {
     background: var(--lightBlue);
 }
-/* ------------ Home Container ----------- */
+/* ----------------- HOME MAIN CONTAINER--------------------- */
 .homePage__container {
     background: var(--gray);
     width: 100%;
@@ -35,6 +36,7 @@
     justify-content: center;
     grid-column-gap: 60px;
 }
+/*------------------------MENU CARD CONTAINER------------------*/
 .menuCard__container {
     margin: 0 auto;
     width: 520px;
@@ -47,6 +49,7 @@
 .menuCard__container > div {
     margin: 0 auto;
 }
+/*---------------------------CHARTS CONTAINER---------------------*/
 .charts__container {
     display: grid;
     grid-template-columns: 100%;
@@ -56,7 +59,7 @@
     align-items: center;
     justify-content: center;
 }
-/* --------------------------Max Width: 1200px------------------*/
+/* --------------------------SMALLER PC´S----------------------*/
 @media (max-width: 1200px) {
     .homePage__container {
         height: auto;
@@ -74,7 +77,7 @@
         width: 80%;
     }
 }
-/* --------------------------Max Width: 700px------------------*/
+/* --------------------------TABLET----------------------------*/
 @media (max-width: 700px) {
     .homePage__container {
         width: 100%;
@@ -91,7 +94,7 @@
         height: 23vh;
     }
 }
-/* --------------------------Max Width: 400px------------------*/
+/* --------------------------MOBILE---------------------------*/
 @media (max-width: 400px) {
     .homePage__container {
         padding: 20px 10px;

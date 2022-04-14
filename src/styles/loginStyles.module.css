@@ -1,3 +1,5 @@
+/*------------------LOGIN PAGE & COMPONENTS STYLES----------------*/
+/*-----------------------LOGIN MAIN CONTAINER--------------------*/
 .login__container {
     background: linear-gradient(to bottom, var(--lightBlue), var(--navyBlue));
     width: 100%;
@@ -7,25 +9,23 @@
     align-items: center;
     justify-content: center;
 }
-
 .login__container > img {
     width: 400px;
     margin-bottom: 12rem;
 }
-
+/*-----------------------FORM CONTAINER---------------------------*/
 .form__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center
 }
-
 .form__container > p {
     font-size: 35px;
     font-weight: 500;
     color: white;
 }
-
+/*-----------------------FORM-------------------------------------*/
 .form__container > form {
     width: 600px;
     background: var(--gray);
@@ -37,7 +37,7 @@
     box-sizing: border-box;
     border-radius: 20px;
 }
-
+/*-----------------------INPUT COMPONENT------------------------*/
 .inputComp {
     background: none;
     width: 95%;
@@ -55,7 +55,7 @@
 ::placeholder {
     color: var(--deepBlue)
 }
-
+/*-----------------------LOGIN BUTTON-------------------------*/
 .login__btn {
     background: var(--yellow);
     padding: 12px 50px;
@@ -69,17 +69,7 @@
 .login__btn:hover, .login__btn:active {
     background: var(--lightBlue);
 }
-
-.errorCard {
-    width: 600px;
-    background: var(--lightBlue);
-    padding: 10px 0;
-    border-radius: 15px;
-    text-align: center;
-    color: white;
-    margin-bottom: 1rem;
-}
-
+/*-----------------------SMALLER SCREEN PC´S--------------------*/
 @media (max-width: 1000px) {
     .login__container > img {
         width: 300px;
@@ -95,7 +85,7 @@
         text-align: center;
     }
 }
-
+/*-----------------------TABLET----------------------------------*/
 @media (max-width: 700px) {
     .login__container > img {
         margin-bottom: 5rem;

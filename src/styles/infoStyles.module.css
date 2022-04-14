@@ -1,3 +1,5 @@
+/*-----CATEGORIES PAGES, UNIT PAGE, CATEGORY PAGE & COMPONENTS STYLES------------*/
+/*-----------------------PAGE MAIN CONTAINER--------------------*/
 .infoPage__container {
     width: 100%;
     min-height: 95vh;
@@ -7,6 +9,7 @@
     align-items: center;
     justify-content: center;
 }
+/*-----------------------TITLE CONTAINER-----------------------*/
 .title__container {
     margin: 3rem 0;
     width: 90%;
@@ -18,6 +21,7 @@
     color: var(--midBlue);
     margin: 0 auto;
 }
+/*-----------------------INFO CARD CONTAINER--------------------*/
 .infoCard__container {
     width: 80%;
     display: flex;
@@ -25,6 +29,7 @@
     align-items: center;
     justify-content: center;
 }
+/*-----------------------INFO CARD-----------------------------*/
 .infoCard {
     width: 100%;
     height: 50px;
@@ -43,6 +48,7 @@
 .infoCard:active, .infoCard:hover {
     background: var(--midBlue);
 }
+/*-----------------------BACK BUTTON CONTAINER--------------------*/
 .backBtn__container {
     width: 90%;
     display: flex;
@@ -52,6 +58,7 @@
     margin: 3rem 0;
     padding: 10px 0 0 0;
 }
+/*-----------------------BACK BURRON-----------------------------*/
 .backBtn {
     width: 150px;
     display: flex;
@@ -74,7 +81,7 @@
 .backBtn:hover span, .backBtn:active span {
     color: var(--lightBlue);
 }
-
+/*-----------------------PTABLET------------------------------*/
 @media (max-width: 700px) {
     .title__container > h1 {
         font-size: 30px;
@@ -93,7 +100,7 @@
         margin: 7px 0;;
     }
 }
-
+/*--------------------------MOBILE------------------------------*/
 @media (max-width: 400px) {
     .infoCard__container {
         width: 95%;

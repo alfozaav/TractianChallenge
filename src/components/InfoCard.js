@@ -1,12 +1,14 @@
+//  Imports
+import {useNavigate} from 'react-router-dom';
+//  Styles
 import styles from '../styles/infoStyles.module.css';
-import {useHistory} from 'react-router-dom';
 
 const InfoCard = (props) => {
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const handleClick = () => {
-        history.push(`/${props.category}/${props.idTo}`)
+        navigate(`/${props.category}/${props.idTo}`)
     }
 
     return ( 

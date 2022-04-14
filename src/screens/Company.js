@@ -1,24 +1,31 @@
+//  Imports
 import React, { useState, useEffect } from 'react';
-import Layout from '../components/Layout';
 import {Helmet} from 'react-helmet';
 import axios from 'axios';
-import styles from '../styles/userStyles.module.css';
+import { useParams } from 'react-router-dom';
+//  Components
+import Layout from '../components/Layout';
 import Spinner from '../components/Spinner';
 import BackBtn from '../components/BackBtn';
+import EditBtn from '../components/EditBtn';
+//  Styles
+import styles from '../styles/userStyles.module.css';
 
 const UnitPage = (props) => {
-
-    const companyId = props.match.params.id;
-
+    //  Company ID From URL
+    const params = useParams();
+    const companyId = params.id;
+    //  State
     const [ company, setCompany ] = useState({});
     const [ loading, setLoading ] = useState(false);
-
+    //  Gets Specific Company
     useEffect(() => {
+        //  Triggers Spinner
         setLoading(true);
 
         const getCompany = async () => {
             try {
-                const res = await axios.get(`https://my-json-server.typicode.com/tractian/fake-api/units/${companyId}`);
+                const res = await axios.get(`https://my-json-server.typicode.com/tractian/fake-api/companies/${companyId}`);
                 setCompany(res.data);
                 setLoading(false);
             } catch (error) {
@@ -39,8 +46,8 @@ const UnitPage = (props) => {
                     <div className={styles.userInfo__container}>
                         <span>INFORMATION</span>
                         <p><span>NAME: </span>{company.name}</p>
-                        <p><span>ID: </span>{company.id}</p>
                     </div>
+                    <EditBtn urlTo='/companies/edit' itemId={company.id} />
                     <BackBtn back='/companies' />
                 </div>
             </Layout>

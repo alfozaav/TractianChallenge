@@ -1,4 +1,5 @@
-/* ------------ Header ----------- */
+/*-----------------------LAYOUT COMPONENTS STYLES--------------------*/
+/*-----------------------HEADER MAIN CONTAINER--------------------*/
 .header__container {
     width: 100%;
     height: 80px;
@@ -11,24 +12,17 @@
     height: 70px;
     cursor: pointer;
 }
-.profileIcon__container {
-    width: 55px;
-    height: 55px;
-    background: var(--midBlue);
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin: 0;
+.header__container > span {
+    font-size: 20px;
     cursor: pointer;
+    color: white;
+    margin: 0;
 }
-.profileIcon__container > svg {
-    fill: var(--lightBlue);
-    height: 70px;
+.header__container > span:hover, .header__container > span:active {
+    color: var(--lightBlue);
 }
 
-/* ------------ Footer ----------- */
+/*-----------------------FOOTER MAIN CONTAINER--------------------*/
 .footer__container {
     width: 100%;
     height: 110px;
@@ -38,19 +32,16 @@
     align-items: center;
     justify-content: center;
 }
-
 .footer__container > p, .footer__container > p > span {
     color: var(--midBlue);
     font-size: 16px;
     margin: 0;
 }
-
 .footer__container > img {
     height: 50px;
     margin: 0;
 }
-
-/* ------------ Layout ----------- */
+/*-----------------------LAYOUT MAIN CONTAINER------------------*/
 .mainLayout__container {
     width: 100%;
     min-height: 95vh;
@@ -59,8 +50,7 @@
     align-items: center;
     justify-content: center;
 }
-
-
+/*-----------------------TABLET---------------------------------*/
 @media (max-width: 700px) {
     .header__container {
         height: 60px;
@@ -68,9 +58,8 @@
     .header__container > img {
         height: 40px;
     }
-    .profileIcon__container {
-        width: 40px;
-        height: 40px;
+    .header__container > span {
+        font-size: 15px;
     }
     .footer__container {
         height: 80px;

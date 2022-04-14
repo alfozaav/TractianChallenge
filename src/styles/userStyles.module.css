@@ -1,3 +1,5 @@
+/*--------------------USER PAGE & COMPONENTS STYLES----------------*/
+/*-----------------------USER PAGE MAIN CONTAINER--------------------*/
 .userPage__container {
     width: 100%;
     min-height: 95vh;
@@ -11,6 +13,7 @@
     color: var(--midBlue);
     font-size: 40px;
 }
+/*-----------------------USER PROFILE ICON----------------------*/
 .userIcon {
     height: 150px;
     width: 150px;
@@ -27,6 +30,7 @@
     fill: var(--lightBlue);
     margin: 0 auto;
 }
+/*-----------------------INFORMATION CONTAINER-------------------*/
 .userInfo__container {
     background: white;
     width: 600px;
@@ -47,7 +51,7 @@
     font-size: 16px;
     margin: 8px 0;
 }
-
+/*-----------------------TABLET & SMALLER----------------------*/
 @media(max-width: 700px) {
     .userPage__container > h1 {
         font-size: 30px;

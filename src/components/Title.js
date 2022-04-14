@@ -1,3 +1,4 @@
+//  Styles
 import styles from '../styles/infoStyles.module.css';
 
 const Title = (props) => (

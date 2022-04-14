@@ -1,22 +1,29 @@
+//  Imports
 import React, { useState, useEffect } from 'react';
-import Layout from '../components/Layout';
 import {Helmet} from 'react-helmet';
 import axios from 'axios';
-import styles from '../styles/userStyles.module.css';
+import { useParams } from 'react-router-dom';
+//  Components
+import Layout from '../components/Layout';
 import Spinner from '../components/Spinner';
 import BackBtn from '../components/BackBtn';
+import EditBtn from '../components/EditBtn';
+//  Styles
+import styles from '../styles/userStyles.module.css';
 
 const UnitPage = (props) => {
-
-    const unitId = props.match.params.id;
-
+    //  Unit ID From URL
+    const params = useParams();
+    const unitId = params.id;
+    //  State
     const [ unit, setUnit ] = useState({});
     const [ company, setCompany ] = useState({});
     const [ loading, setLoading ] = useState(false);
 
     useEffect(() => {
+        //  Triggers Spinner
         setLoading(true);
-
+        //  Gets Specific Company
         const getCompany = async (id) => {
             try {
                 const res = await axios.get(`https://my-json-server.typicode.com/tractian/fake-api/companies/${id}`);
@@ -25,7 +32,7 @@ const UnitPage = (props) => {
                 console.log('It was an error with fetching the API', error.message);
             }
         }
-
+        //  Gets Specific Unit
         const getUnit = async () => {
             try {
                 const res = await axios.get(`https://my-json-server.typicode.com/tractian/fake-api/units/${unitId}`);
@@ -47,12 +54,12 @@ const UnitPage = (props) => {
             <Layout>
                 {loading && <Spinner /> }
                 <div className={styles.userPage__container}>
-                    <h1>{unit.name}</h1>
                     <div className={styles.userInfo__container}>
                         <span>INFORMATION</span>
-                        <p><span>ID: </span>{unit.id}</p>
+                        <p><span>NAME: </span>{unit.name}</p>
                         <p><span>COMPANY: </span>{company.name}</p>
                     </div>
+                    <EditBtn urlTo='/units/edit' itemId={unit.id} />
                     <BackBtn back='/units' />
                 </div>
             </Layout>

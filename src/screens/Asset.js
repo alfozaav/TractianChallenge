@@ -1,26 +1,32 @@
+//  Imports
 import React, { useState, useEffect } from 'react';
-import Layout from '../components/Layout';
 import {Helmet} from 'react-helmet';
 import axios from 'axios';
-import styles from '../styles/assetStyles.module.css';
+import { useParams } from 'react-router-dom';
+//  Components
+import Layout from '../components/Layout';
 import Spinner from '../components/Spinner';
 import BackBtn from '../components/BackBtn';
+import EditBtn from '../components/EditBtn';
+//  Styles
+import styles from '../styles/assetStyles.module.css';
 
-const AssetPage = (props) => {
-
-    const assetId = props.match.params.id;
-
+const AssetPage = () => {
+    //  Asset Id From URL
+    const params = useParams();
+    const assetId = params.id;
+    //  State
     const [ asset, setAsset ] = useState({});
     const [ unit, setUnit ] = useState({});
     const [ company, setCompany ] = useState({});
     const [ loading, setLoading ] = useState(false);
-    const [ metrics, setMetrics ] = useState({});
     const [ specifications, setSpecifications ] = useState({});
     const [ sensors, setSensors ] = useState([]);
 
     useEffect(() => {
+        //  Triggers Spinner
         setLoading(true);
-
+        //  Gets Specific Unit
         const getUnit = async (id) => {
             try {
                 const res = await axios.get(`https://my-json-server.typicode.com/tractian/fake-api/units/${id}`);
@@ -29,7 +35,7 @@ const AssetPage = (props) => {
                 console.log('It was an error with fetching the API', error.message);
             }
         }
-
+        //  Gets Specific Company
         const getCompany = async (id) => {
             try {
                 const res = await axios.get(`https://my-json-server.typicode.com/tractian/fake-api/companies/${id}`);
@@ -38,14 +44,13 @@ const AssetPage = (props) => {
                 console.log('It was an error with fetching the API', error.message);
             }
         }
-
+        //  Gets Specific Asset
         const getAsset = async () => {
             try {
                 const res = await axios.get(`https://my-json-server.typicode.com/tractian/fake-api/assets/${assetId}`);
                 setAsset(res.data);
                 getUnit(res.data.unitId);
                 getCompany(res.data.companyId);
-                setMetrics(res.data.metrics);
                 setSpecifications(res.data.specifications);
                 setSensors(res.data.sensors);
                 setLoading(false);
@@ -70,7 +75,6 @@ const AssetPage = (props) => {
                     <h1>{asset.name}</h1>
                     <div className={styles.assetInfo__container}>
                         <span>INFORMATION</span>
-                        <p><span>ID: </span>{asset.id}</p>
                         <p><span>MODEL: </span>{asset.model}</p>
                         <p><span>STATUS: </span>{asset.status}</p>
                         <p><span>HEALTH SCORE: </span>{asset.healthscore}</p>
@@ -94,12 +98,7 @@ const AssetPage = (props) => {
                         <p><span>MAX TEMP: </span> {specifications.maxTemp ? specifications.maxTemp : 'No information' }</p>
                         <p><span>RPM: </span> {specifications.rpm ? specifications.rpm : 'No information' }</p>
                     </div>
-                    <div className={styles.assetInfo__container}>
-                        <span>METRICS</span>
-                        <p><span>TOTAL COLLECTS UPTIME: </span>{metrics.totalCollectsUptime}</p>
-                        <p><span>TOTAL UPTIME: </span>{metrics.totalUptime}</p>
-                        <p><span>LAST UPTIME AT: </span>{metrics.lastUptimeAt}</p>
-                    </div>
+                    <EditBtn urlTo='/assets/edit' itemId={asset.id} />
                     <BackBtn back='/assets' />
                 </div>
             </Layout>

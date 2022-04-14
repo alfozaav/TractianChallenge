@@ -1,0 +1,68 @@
+/*--------------------------------404 PAGE & COMPONENTS STYLES---------------------------------------*/
+.errorPage__container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, var(--lightBlue), var(--navyBlue));
+}
+.errorPage__container > img {
+    width: 200px;
+    transform: translatey(0px);
+    animation: float 3s ease-in-out infinite;
+}
+.errorPage__container > h1 {
+    font-size: 60px;
+    color: white;
+    margin: 0 0 2rem 0;
+}
+.errorPage__container > h2 {
+    font-size: 40px;
+    color: white;
+    margin: 0 0 4rem 0;
+}
+.errorPage__container > a {
+    font-size: 20px;
+    color: var(-lightBlue);
+    margin: 0;
+    cursor: pointer;
+    text-decoration: none;
+}
+.errorPage__container > a:hover, .errorPage__container > a:active {
+    color: white;
+}
+/*--------------------------------ANIMATION KEYFRAMES---------------------------------------*/
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+/*--------------------------------TABLET---------------------------------------*/
+@media(max-width: 700px) {
+    .errorPage__container > img {
+        width: 200px;
+    }
+    .errorPage__container > h1 {
+        font-size: 40px;
+    }
+    .errorPage__container > h2 {
+        font-size: 30px;
+    }
+    .errorPage__container > a {
+        font-size: 18px;
+    }
+}
+/*--------------------------------MOBILE---------------------------------------*/
+@media(max-width: 400px) {
+    .errorPage__container > img {
+        width: 150px;
+    }
+}

@@ -1,20 +1,24 @@
+//  Imports
 import React, { useState, useEffect } from 'react';
-import Layout from '../components/Layout';
 import {Helmet} from 'react-helmet';
 import axios from 'axios';
+//  Components
+import Layout from '../components/Layout';
 import InfoCard from '../components/InfoCard';
-import styles from '../styles/infoStyles.module.css';
 import Spinner from '../components/Spinner';
 import Title from '../components/Title';
 import BackBtn from '../components/BackBtn';
+//  Styles
+import styles from '../styles/infoStyles.module.css';
 
 const AssetsPage = () => {
-
+    //  State
     const [ assets, setAssets ] = useState([]);
     const [ loading, setLoading ] = useState(false);
-
+    //  Gets All Assets
     useEffect(() => {
         const getAssets = async () => {
+            //  Triggers Spinner
             setLoading(true);
             try {
                 const res = await axios.get('https://my-json-server.typicode.com/tractian/fake-api/assets');
