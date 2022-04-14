@@ -10,9 +10,7 @@ const EditBtn = ({itemId, urlTo}) => {
     }
 
     return ( 
-        <div>
             <button className={styles.editPage_btn} onClick={handleEdit}>Edit</button>
-        </div>
      );
 }
  
